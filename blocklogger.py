@@ -9,7 +9,7 @@ def abrir_os_logs():
     return open(server_log, 'r')
 
 def mostrar_logs(dados):
-    ''' Aqui ira pegar os dados do logs e enviar para o canal do discord'''
+    ''' Aqui ira pegar os dados dos logs e enviar para o canal do discord'''
     dados.seek(0, 2)  # Vai para o final do arquivo
     while True:
         linhas = dados.readlines()
