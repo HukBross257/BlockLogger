@@ -2,8 +2,8 @@ import time
 import requests
 
 
-server_log = 'server.log' # Coloque aqui o caminho para o server.log do seu server
-discord_webhook = 'https://discord.com/api/webhooks/1436121229277794325/iGxmoabpXKw3aCX26UCRW6p_uj0WGzuzJ-MMYgqlJIw6MNzZursRTuPCLg0XL6ux4I-M' # Coloque o webhook aqui !
+server_log = '' # Coloque aqui o caminho para o server.log do seu server
+discord_webhook = '' # Coloque o webhook aqui !
 
 def abrir_os_logs():
     '''Coloque o caminho para o arquivo server.logs aqui'''
