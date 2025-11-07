@@ -1,6 +1,7 @@
 import time
 import requests
 '''Irei melhorar esse codigo em pouco em pouco :)'''
+'''Caso queira que mostre apenas quando liga e desliga e entrada e saidas de players podera filtrar'''
 
 server_log = '' # Coloque aqui o caminho para o server.log do seu server
 discord_webhook = ''
