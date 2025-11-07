@@ -1,9 +1,9 @@
 import time
 import requests
+'''Irei melhorar esse codigo em pouco em pouco :)'''
 
-
-server_log = '' # Coloque aqui o caminho para o server.log do seu server
-discord_webhook = '' # Coloque o webhook aqui !
+server_log = 'server.log' # Coloque aqui o caminho para o server.log do seu server
+discord_webhook = 'https://discord.com/api/webhooks/1436022804892876962/seG6nY5XP6IhAB_pA8VylgO31aYyUCfinexkecq_fM-z-Nsx6wdHdTB7AV9iWlnKIbCg' # Coloque o webhook aqui !
 
 def abrir_os_logs():
     '''Coloque o caminho para o arquivo server.logs aqui'''
@@ -11,18 +11,17 @@ def abrir_os_logs():
     return open(server_log, 'r')
 
 def mostrar_logs(dados):
-    try:
-        ''' Aqui ira pegar os dados do logs e enviar para o canal do discord'''
-        dados.seek(0, 2)  # Vai para o final do arquivo
-        discord_weebhook = '' 
-        
-        while True:
-            linhas = dados.readlines()
-            linhas = [linha.strip() for linha in linhas]
-            
-            for linha in linhas:
+    ''' Aqui ira pegar os dados do logs e enviar para o canal do discord'''
+    dados.seek(0, 2)  # Vai para o final do arquivo
+    while True:
+        linhas = dados.readlines()
+        linhas = [linha.strip() for linha in linhas]
+
+        for linha in linhas:
+            try:
                 requests.post(discord_webhook, json={'content': linha})
-                print(linha)
-            time.sleep(0.2)
-    except Exception as e:
-        print(f'Aconteceu um erro e nao foi possivel enviar para o Discord {e}')
+
+            except Exception as e:
+                print(f'Aconteceu um erro e nao foi possivel enviar para o Discord {e}')
+            print(linha)
+        time.sleep(0.2)
